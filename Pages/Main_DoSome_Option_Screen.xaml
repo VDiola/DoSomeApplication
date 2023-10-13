@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DoSomeApplication.Pages.Main_DoSome_Option_Screen"
+             Title="Main_DoSome_Option_Screen"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#F2EE9D">
+
+    <!--Grid Definitions-->
+    <Grid RowDefinitions="Auto, *, Auto"
+              Padding="15, 60"
+              RowSpacing="15">
+
+
+        <!-- Label: Do Some Text-->
+        <Label Grid.Row="0"
+               CharacterSpacing="10"
+               Text="DO SOME"
+               TextColor="#0075FF"
+               FontSize="20"               
+               HorizontalOptions="Center"
+               FontAttributes="Bold"
+          />
+        
+        <!-- Label: Are you Bored?-->
+        <Label Grid.Row="1"
+               Grid.RowSpan="2"
+           Text="ARE YOU BORED?"
+           TextColor="Black"
+           FontSize="35"
+           HorizontalOptions="Center"
+           FontAttributes="Bold"
+          
+       />
+        <!-- Image: Do Some Splash -->
+        <Image Grid.Row="1"
+               
+               Source="dosome_splash.svg"
+               HeightRequest="280"
+               WidthRequest="280"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
+
+
+        <!--Buttons & Labels-->
+        <VerticalStackLayout Grid.Row="2"
+                             Spacing="25">
+
+            <Button 
+                x:Name="login_button"
+                Clicked="login_button_Clicked"
+                
+                CornerRadius="20"
+                BackgroundColor="#EBFF00"
+                
+                TextColor="Black"
+                Text="Login"
+                
+                HeightRequest="50"
+                WidthRequest="250"
+                
+                FontAttributes="Bold"
+                FontSize="20"
+                
+                />
+
+            <Button
+                x:Name="anonymous_button"
+                Clicked="anonymous_button_Clicked"
+                CornerRadius="20"
+                BackgroundColor="#EBFF00"
+                
+                TextColor="Black"
+                Text="Anonymous"
+                
+                HeightRequest="50"
+                WidthRequest="250"
+                
+                FontAttributes="Bold"
+                FontSize="20"
+                 
+                />
+
+            <Label
+                Text="Terms and Conditions"
+                
+                FontSize="18"
+                FontAttributes="Bold"
+                
+                HorizontalOptions="Center"
+                
+                Opacity="0.7"
+                />
+
+        </VerticalStackLayout>
+        
+        
+    </Grid>
+</ContentPage>
