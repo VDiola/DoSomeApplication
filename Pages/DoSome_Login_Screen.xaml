@@ -4,7 +4,8 @@
              x:Class="DoSomeApplication.Pages.DoSome_Login_Screen"
              Title="DoSome_Login_Screen"
              Shell.NavBarIsVisible="False"
-             BackgroundColor="#F2EE9D">
+             BackgroundColor="#F2EE9D"
+             xmlns:local ="clr-namespace:DoSomeApplication.Pages">
 
     <Grid RowDefinitions="Auto, *, Auto"
           Padding="15, 60"
@@ -18,20 +19,24 @@
            TextColor="#0075FF"
            FontSize="20"               
            HorizontalOptions="Center"
-           FontAttributes="Bold"
+           FontAttributes="Bold" 
+           FontFamily="Montserrat"
            
       />
 
         <!-- Label: Are you Bored?-->
         <Label Grid.Row="1"
            Grid.RowSpan="2"
-        Text="ARE YOU BORED?"
-        TextColor="Black"
+           Text="ARE YOU BORED?"
+           TextColor="Black"
         FontSize="35"
        HorizontalOptions="Center"
-       FontAttributes="Bold"/>
+       FontAttributes="Bold"
+       FontFamily="Montserrat"/>
 
-
+        
+        
+        <!--Frame: Login-->
         <Frame Grid.Row="1"
                CornerRadius="20"
                BackgroundColor="#FDFDFD"
@@ -40,63 +45,90 @@
                HorizontalOptions="Center"
                VerticalOptions="Center">
 
-            <StackLayout>
+
+                <!--Vertical Stack Layout for the Login-->
+            <VerticalStackLayout Spacing="25">
+
+                
+                
+                <!-- Label: Login Text-->
+
+                <Grid ColumnDefinitions="Auto, *">
+                   
+                 
+
+                    <!-- "left_arrow_button" Image on the left -->
+                    <Image Grid.Column="0"
+                       Source="left_arrow_button.svg"
+                       WidthRequest="30"
+                       HeightRequest="35"/>
+                    <!-- "Login" Label centered within the frame -->
+                    <Label Grid.Column="1"
+                       FontFamily="Montserrat"
+                       Text="Login"
+                       HorizontalOptions="Center"
+                       FontAttributes="Bold"
+                       FontSize="20"/>  
+
+                </Grid>
+
+                <!-- Frame: UserName
+                    Note: Padding only for Android
+                -->
+                <Frame BackgroundColor="#D9D9D9"
+                       WidthRequest="210"
+                       HeightRequest="45"
+                       CornerRadius="20"
+                       Padding="{x:OnPlatform Android='10,0'}"
+                      >
+                    <local:BorderlessEntry Placeholder="Username"
+                                           HorizontalTextAlignment="Center"
+                                           FontAttributes="Bold"
+                                           FontFamily="Montserrat"
+                                           FontSize="12"/>
+                </Frame>
+
+
+                <!-- Frame: Password
+                     Note: Padding only for Android
+                 -->
+                <Frame BackgroundColor="#D9D9D9"
+                       WidthRequest="210"
+                       HeightRequest="45"
+                       CornerRadius="20"
+                       Padding="{x:OnPlatform Android='10,0'}"
+        >
+                    <local:BorderlessEntry Placeholder="Password"
+                                           HorizontalTextAlignment="Center"
+                                           FontAttributes="Bold"
+                                           FontFamily="Montserrat"
+                                           FontSize="12"/>
+                </Frame>
+
                 <Label
-                    Text="Login"
+                    Text="or"
+                    
                     HorizontalOptions="Center"
+                    
                     FontAttributes="Bold"
-                    FontSize="22"
+                    FontFamily="Montserrat"
+                    FontSize="15"
                     />
 
-                <Entry Placeholder="Username"
-                       BackgroundColor="#D9D9D9"
-                       Margin="20,20,20,10"
-                       PlaceholderColor="Black"
-                       Opacity="0.5"
-                    />
-
-                <Entry Placeholder="Password" 
-                       IsPassword="True"  
-                       BackgroundColor="#D9D9D9" 
-                       Margin="20,0,20,10"
-                       PlaceholderColor="Black"
-                       Opacity="0.5"/>
-
-                <Label Text="OR" 
-                        HorizontalOptions="Center" 
-                        Margin="0,10"
-                        FontAttributes="Bold"
-                        FontSize="22"/>
-                <StackLayout Orientation="Horizontal" 
-                             HorizontalOptions="CenterAndExpand"
-                             Spacing="35">
-
-                    <Image Source="dotnet_bot.svg" 
-                           WidthRequest="50" 
-                           HeightRequest="50"  />
-
-                    <Image Source="dotnet_bot.svg" 
-                           WidthRequest="50" 
-                           HeightRequest="50"/>
-
+                <!-- Stack Layout: Login Option Images-->
+                <StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="CenterAndExpand"
+                    Spacing="15">
+                    
+                    <Image
+                        Source="fb_img.svg"
+                        />
+                    <Image
+                        Source="google_img.svg"
+                        />
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" 
-                             HorizontalOptions="CenterAndExpand" 
-                             Margin="0,10"
-                             Spacing="15">
-
-                    <Button Text="Login" 
-                            CornerRadius="20" 
-                            BackgroundColor="#D9D9D9" 
-                            WidthRequest="100" />
-
-                    <Button Text="Signup" 
-                            CornerRadius="20" 
-                            BackgroundColor="#D9D9D9" 
-                            WidthRequest="100" />
-                </StackLayout>
-
-            </StackLayout>
+            </VerticalStackLayout>
 
            
         </Frame>

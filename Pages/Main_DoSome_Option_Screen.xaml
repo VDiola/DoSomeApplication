@@ -4,12 +4,14 @@
              x:Class="DoSomeApplication.Pages.Main_DoSome_Option_Screen"
              Title="Main_DoSome_Option_Screen"
              Shell.NavBarIsVisible="False"
-             BackgroundColor="#F2EE9D">
+             BackgroundColor="#F2EE9D"
+             >
 
     <!--Grid Definitions-->
     <Grid RowDefinitions="Auto, *, Auto"
               Padding="15, 60"
-              RowSpacing="15">
+              RowSpacing="15"
+            >
 
 
         <!-- Label: Do Some Text-->
@@ -20,6 +22,7 @@
                FontSize="20"               
                HorizontalOptions="Center"
                FontAttributes="Bold"
+               FontFamily="Montserrat"
           />
         
         <!-- Label: Are you Bored?-->
@@ -30,6 +33,7 @@
            FontSize="35"
            HorizontalOptions="Center"
            FontAttributes="Bold"
+           FontFamily="Montserrat"
           
        />
         <!-- Image: Do Some Splash -->
@@ -44,7 +48,8 @@
 
         <!--Buttons & Labels-->
         <VerticalStackLayout Grid.Row="2"
-                             Spacing="25">
+                             Spacing="25"
+                             >
 
             <Button 
                 x:Name="login_button"
@@ -62,6 +67,7 @@
                 FontAttributes="Bold"
                 FontSize="20"
                 
+                FontFamily="Montserrat"
                 />
 
             <Button
@@ -79,6 +85,7 @@
                 FontAttributes="Bold"
                 FontSize="20"
                  
+                FontFamily="Montserrat"
                 />
 
             <Label
@@ -90,10 +97,13 @@
                 HorizontalOptions="Center"
                 
                 Opacity="0.7"
+                
+                FontFamily="Montserrat"
                 />
 
         </VerticalStackLayout>
-        
-        
+
+       
+
     </Grid>
 </ContentPage>
