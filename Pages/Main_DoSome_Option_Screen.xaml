@@ -4,8 +4,10 @@
              x:Class="DoSomeApplication.Pages.Main_DoSome_Option_Screen"
              Title="Main_DoSome_Option_Screen"
              Shell.NavBarIsVisible="False"
-             BackgroundColor="#F2EE9D"
-             >
+             BackgroundColor="#F2EE9D">
+
+
+
 
     <!--Grid Definitions-->
     <Grid RowDefinitions="Auto, *, Auto"
@@ -21,7 +23,6 @@
                TextColor="#0075FF"
                FontSize="20"               
                HorizontalOptions="Center"
-               FontAttributes="Bold"
                FontFamily="Montserrat"
           />
         
@@ -49,7 +50,7 @@
         <!--Buttons & Labels-->
         <VerticalStackLayout Grid.Row="2"
                              Spacing="25"
-                             >
+                             Margin="0,0,0,50">
 
             <Button 
                 x:Name="login_button"

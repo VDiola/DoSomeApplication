@@ -4,13 +4,129 @@
              x:Class="DoSomeApplication.Pages.DoSome_Anonymous_Screen"
              Title="DoSome_Anonymous_Screen"
              Shell.NavBarIsVisible="False"
-             BackgroundColor="#F2EE9D">
-    
-    <VerticalStackLayout>
-        <Label 
-            Text="Anonymous"
-            FontSize="30"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             BackgroundColor="#F2EE9D"
+             xmlns:local ="clr-namespace:DoSomeApplication.Pages">
+
+    <Grid RowDefinitions="Auto, *, Auto"
+      Padding="15, 60"
+      RowSpacing="15">
+
+        <!-- Label: Do Some Text-->
+        <Label Grid.Row="0" 
+               CharacterSpacing="10"
+               Text="DO SOME"
+               TextColor="#0075FF"
+               FontSize="20"               
+               HorizontalOptions="Center"
+               FontAttributes="Bold" 
+               FontFamily="Montserrat"
+            />  
+
+
+        <!-- Label: Are you Bored?-->
+        <Label Grid.Row="0"
+               Grid.RowSpan="2"
+               Text="ARE YOU BORED?"
+               TextColor="Black"
+               FontSize="35"
+               HorizontalOptions="Center"
+               FontAttributes="Bold"
+               FontFamily="Montserrat"
+               Margin="0,40,0,0"/>
+
+        <!--Image DoSome Logo-->
+        <Image 
+               Source="dosome_logo.svg"
+               WidthRequest="100"
+               HeightRequest="100"
+               Margin="0,100,0,10"
+                  />
+
+
+        <!--Frame: Login-->
+
+        <Frame Grid.Row="1"
+    CornerRadius="20"
+    BackgroundColor="#FDFDFD"
+    WidthRequest="275"
+    HeightRequest="400"
+    HorizontalOptions="Center"
+    VerticalOptions="Center"
+    Margin="0,0,0,55">
+
+            <!--Vertical Stack Layout for the Login-->
+         <VerticalStackLayout Spacing="15">
+
+                <!-- Label: Login Text -->
+            <Grid RowDefinitions="Auto, Auto"
+              ColumnDefinitions="Auto,*"
+              ColumnSpacing="-25"
+                  RowSpacing="15">
+
+                    <!-- Image: Left Arrow Button -->
+                    <Image Grid.Row="0" Grid.Column="0"
+                           Source="left_arrow_button.svg"
+                           WidthRequest="30"
+                           HeightRequest="35"/>
+
+                    <!-- Image: Anonymous -->
+                    <Image Grid.Row="0" Grid.Column="1"
+                           HorizontalOptions="Center"
+                           Source="anonymous_img.svg"
+                           WidthRequest="65"
+                           HeightRequest="65"/>
+
+
+                    <!-- Label: Sign in as Anonymous -->
+             <Label Grid.Row="1" Grid.Column="1"
+                Text="Sign in as Anonymous"
+                HorizontalOptions="Center"
+                FontAttributes="Bold"
+                FontFamily="Montserrat"
+                FontSize="15"/>
+
+                </Grid>
+
+            <Frame BackgroundColor="#D9D9D9"
+                   WidthRequest="210"
+                   HeightRequest="45"
+                   CornerRadius="20"
+                   Padding="{x:OnPlatform Android='10,0'}"
+                   Margin="0,35,0,25">
+
+            <local:BorderlessEntry Placeholder="Username"
+                       HorizontalTextAlignment="Center"
+                       FontAttributes="Bold"
+                       FontFamily="Montserrat"
+                       FontSize="12"/>
+            </Frame>
+
+
+
+                <!-- Stack Layout: Buttons - Login and Sign Up-->
+            <StackLayout 
+                        Orientation="Horizontal"
+                        HorizontalOptions="CenterAndExpand"
+                        Spacing="10">
+
+                    <Button Text="Enter" 
+                            x:Name="enter_button"
+                            Clicked="enter_button_Clicked"
+                            CornerRadius="20"
+                            BackgroundColor="#D9D9D9" 
+            
+                            WidthRequest="105"
+                            HeightRequest="40"
+            
+                            TextColor="Black"
+            
+                            FontFamily="Montserrat"
+                            FontAttributes="Bold"
+                            Opacity="0.5"
+                            FontSize="10"/>
+
+                </StackLayout>
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
 </ContentPage>

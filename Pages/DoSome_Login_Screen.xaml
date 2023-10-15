@@ -9,11 +9,14 @@
 
     <Grid RowDefinitions="Auto, *, Auto"
           Padding="15, 60"
-          RowSpacing="15">
+          RowSpacing="15"
+       
+          >
 
 
         <!-- Label: Do Some Text-->
         <Label Grid.Row="0"
+              
            CharacterSpacing="10"
            Text="DO SOME"
            TextColor="#0075FF"
@@ -21,60 +24,74 @@
            HorizontalOptions="Center"
            FontAttributes="Bold" 
            FontFamily="Montserrat"
-           
-      />
+          
+            />
 
+        
         <!-- Label: Are you Bored?-->
-        <Label Grid.Row="1"
+        <Label Grid.Row="0"
            Grid.RowSpan="2"
            Text="ARE YOU BORED?"
            TextColor="Black"
-        FontSize="35"
-       HorizontalOptions="Center"
-       FontAttributes="Bold"
-       FontFamily="Montserrat"/>
+           FontSize="35"
+           HorizontalOptions="Center"
+           FontAttributes="Bold"
+           FontFamily="Montserrat"
+           Margin="0,40,0,0"/>
+        
+        <!--Image DoSome Logo-->
+        <Image 
+                      Source="dosome_logo.svg"
+                      WidthRequest="100"
+                      HeightRequest="100"
+                      Margin="0,100,0,10"
+                      />
 
-        
-        
+
         <!--Frame: Login-->
+        
         <Frame Grid.Row="1"
                CornerRadius="20"
                BackgroundColor="#FDFDFD"
                WidthRequest="275"
                HeightRequest="400"
                HorizontalOptions="Center"
-               VerticalOptions="Center">
+               VerticalOptions="Center"
+               Margin="0,0,0,55">
 
 
-                <!--Vertical Stack Layout for the Login-->
-            <VerticalStackLayout Spacing="25">
+        <!--Vertical Stack Layout for the Login-->
+        <VerticalStackLayout Spacing="25">
 
-                
-                
+              
+
                 <!-- Label: Login Text-->
+        <Grid ColumnDefinitions="Auto, *"
+              ColumnSpacing="-25">
 
-                <Grid ColumnDefinitions="Auto, *">
-                   
-                 
+
 
                     <!-- "left_arrow_button" Image on the left -->
                     <Image Grid.Column="0"
                        Source="left_arrow_button.svg"
                        WidthRequest="30"
                        HeightRequest="35"/>
+
                     <!-- "Login" Label centered within the frame -->
                     <Label Grid.Column="1"
                        FontFamily="Montserrat"
                        Text="Login"
                        HorizontalOptions="Center"
                        FontAttributes="Bold"
-                       FontSize="20"/>  
+                       FontSize="Title"/>
 
                 </Grid>
+                
+
 
                 <!-- Frame: UserName
-                    Note: Padding only for Android
-                -->
+                    Note: Padding only for Android -->
+               
                 <Frame BackgroundColor="#D9D9D9"
                        WidthRequest="210"
                        HeightRequest="45"
@@ -90,8 +107,8 @@
 
 
                 <!-- Frame: Password
-                     Note: Padding only for Android
-                 -->
+                     Note: Padding only for Android -->
+                
                 <Frame BackgroundColor="#D9D9D9"
                        WidthRequest="210"
                        HeightRequest="45"
@@ -120,7 +137,7 @@
                     Orientation="Horizontal"
                     HorizontalOptions="CenterAndExpand"
                     Spacing="15">
-                    
+
                     <Image
                         Source="fb_img.svg"
                         />
@@ -128,11 +145,51 @@
                         Source="google_img.svg"
                         />
                 </StackLayout>
+
+                <!-- Stack Layout: Buttons - Login and Sign Up-->
+                <StackLayout 
+                    Orientation="Horizontal"
+                    HorizontalOptions="CenterAndExpand"
+                    Spacing="10">
+
+                    
+                
+                    <Button Text="Login" 
+                            x:Name="login_button"
+                            Clicked="login_button_Clicked"
+                            
+                            CornerRadius="20" 
+                            BackgroundColor="#D9D9D9" 
+                            
+                            WidthRequest="105"
+                            HeightRequest="40"
+                            
+                            TextColor="Black"
+                            
+                            FontFamily="Montserrat"
+                            FontAttributes="Bold"
+                            Opacity="0.5"
+                            FontSize="10"
+                            />
+                    
+                    <Button Text="Sign Up" 
+                            x:Name="signup_button"
+                            Clicked="signup_button_Clicked"
+                            CornerRadius="20"
+                            BackgroundColor="#D9D9D9" 
+                            
+                            WidthRequest="105"
+                            HeightRequest="40"
+                            
+                            TextColor="Black"
+                            
+                            FontFamily="Montserrat"
+                            FontAttributes="Bold"
+                            Opacity="0.5"
+                            FontSize="10"
+                             />
+                </StackLayout>
             </VerticalStackLayout>
-
-           
         </Frame>
-
-
     </Grid>
 </ContentPage>
